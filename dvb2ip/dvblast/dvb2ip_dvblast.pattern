@@ -1,0 +1,27 @@
+description "dvb2ip-dvblast@@ADAPTER@@"
+
+start on started dvb2ip
+stop on stopping dvb2ip
+
+console log
+respawn
+
+kill signal 9
+kill timeout 1
+
+script
+    adapter=@@ADAPTER@@
+    socket=/tmp/adapter$adapter
+    configfile=/etc/dvb2ip/dvblast/$adapter.cfg
+    freq=@@FREQUENCY@@
+    diseqc=@@DISEQC@@
+    polarity=@@POLARITY@@
+    symbolrate=@@SYMBOLRATE@@
+
+    if [ "$polarity" = "0" -o -z "$polarity" -o "$diseqc" = "0" -o -z "$diseqc" ]; then
+        exec /usr/local/bin/dvblast -a $adapter -r $socket -f $freq -c $configfile
+    else
+        exec /usr/local/bin/dvblast -a $adapter -r $socket -f $freq -S $diseqc -v $polarity -s $symbolrate -c $configfile
+    fi
+end script
+

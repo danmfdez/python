@@ -1,0 +1,1 @@
+    ffmpeg -i udp://@@IP@@:@@PORT_DVBLAST@@ $crop -preset superfast -c:v libx264 -f mpegts -b:v 1M -b:a 128k -crf 25 -aspect 16:9 -g 12 udp://@@IP@@:@@PORT_FFMPEG@@?pkt_size=1316 < /dev/null 2>&1 | stdbuf -i0 -o0 -e0 tr '\r' '\n' >>/var/log/ffmpeg_mpegts_@@IP@@_@@PORT_DVBLAST@@.log

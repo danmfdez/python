@@ -1,0 +1,98 @@
+{
+    "udpxy": {
+        "port": "4022",
+        "clients": "50"
+    },
+
+    "adapters": {
+        "161": {
+            "symbol_rate": "0",
+            "frequency": "554000000",
+            "polarity": "0",
+            "diseqc": "0",
+            "services": [
+                {
+                    "protocol": "mpegts",
+                    "sid": "490",
+                    "ip": "239.64.17.1",
+                    "ip_lo": "127.0.0.1",
+                    "port_dvblast": "6100",
+                    "port_ffmpeg": "6101",
+                    "path_hls": "canal1"
+
+                },
+                {
+                    "protocol": "hls",
+                    "sid": "491",
+                    "ip": "239.64.17.2",
+                    "ip_lo": "127.0.0.1",
+                    "port_dvblast": "6100",
+                    "port_ffmpeg": "6101",
+                    "path_hls": "canal2"
+                },
+                {
+                    "protocol": "mpegts",
+                    "sid": "492",
+                    "ip": "239.64.17.3",
+                    "ip_lo": "127.0.0.1",
+                    "port_dvblast": "6100",
+                    "port_ffmpeg": "6101",
+                    "path_hls": "canal3"
+                },
+                {
+                    "protocol": "mpegts",
+                    "sid": "493",
+                    "ip": "239.64.17.4",
+                    "ip_lo": "127.0.0.1",
+                    "port_dvblast": "6100",
+                    "port_ffmpeg": "6101",
+                    "path_hls": "canal4"
+                }
+            ]
+        },
+        "162": {
+            "symbol_rate": "0",
+            "frequency": "578000000",
+            "polarity": "0",
+            "diseqc": "0",
+            "services": [
+                {
+                    "protocol": "mpegts",
+                    "sid": "186",
+                    "ip": "239.64.18.1",
+                    "ip_lo": "127.0.0.1",
+                    "port_dvblast": "6100",
+                    "port_ffmpeg": "6101",
+                    "path_hls": "canal5"
+                },
+                {
+                    "protocol": "mpegts",
+                    "sid": "187",
+                    "ip": "239.64.18.2",
+                    "ip_lo": "127.0.0.1",
+                    "port_dvblast": "6100",
+                    "port_ffmpeg": "6101",
+                    "path_hls": "canal6"
+                },
+                {
+                    "protocol": "mpegts",
+                    "sid": "188",
+                    "ip": "239.64.18.3",
+                    "ip_lo": "127.0.0.1",
+                    "port_dvblast": "6100",
+                    "port_ffmpeg": "6101",
+                    "path_hls": "canal7"
+                },
+                {
+                    "protocol": "mpegts",
+                    "sid": "189",
+                    "ip": "239.64.18.4",
+                    "ip_lo": "127.0.0.1",
+                    "port_dvblast": "6100",
+                    "port_ffmpeg": "6101",
+                    "path_hls": "canal8"
+                }
+            ]
+        }
+    }
+}

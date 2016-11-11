@@ -1,0 +1,1 @@
+    ffmpeg -i udp://@@IP@@:@@PORT_DVBLAST@@ -preset superfast -f hls -sn -c:v libx264 -strict -2 -c:a copy -g 12 -crf 25 -vf yadif=0:-1:1 -hls_time 10 -hls_list_size 6 -hls_wrap 10 -hls_flags delete_segments /var/www/html/@@PATH_HLS@@/playlist.m3u8 < /dev/null 2>&1 | stdbuf -i0 -o0 -e0 tr '\r' '\n' >>/var/log/ffmpeg_@@IP@@_@@PORT_DVBLAST@@.log

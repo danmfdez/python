@@ -1,0 +1,11 @@
+description "DVB streaming, UDPXY Proxy"
+ 
+start on (started dvb2ip_ffmpeg*)
+stop on (stopping dvb2ip or runlevel [016])
+
+console log
+            
+script 
+    exec udpxy -T -p @@PORT@@ -c @@CLIENTS@@
+end script
+
